@@ -1,5 +1,7 @@
 package ru;
 
+import java.util.function.Predicate;
+
 public class OddOrEven {
     public static String oddOrEven (int[] array) {
         int res = 0;
@@ -7,7 +9,8 @@ public class OddOrEven {
             res += array[i];
         }
 
-        if(res % 2 == 0){
+        Predicate<Integer> predicate = x -> x % 2 == 0;
+        if(predicate.test(res)){
             return "even";
         } else{
             return "odd";
